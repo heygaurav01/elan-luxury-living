@@ -2,7 +2,15 @@ import LeadForm from './LeadForm';
 
 const SideLeadForm = () => {
   return (
-    <div className="hidden lg:block fixed right-6 top-1/2 -translate-y-1/2 z-40 w-[340px]">
+    <div 
+      className="hidden lg:block z-50 w-[380px]"
+      style={{
+        position: 'fixed',
+        right: '24px',
+        top: '50%',
+        transform: 'translateY(-50%)',
+      }}
+    >
       <LeadForm />
     </div>
   );
