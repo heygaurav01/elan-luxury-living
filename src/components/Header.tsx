@@ -33,19 +33,12 @@ const Header = () => {
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2">
-          <div className="flex items-center">
-            <svg viewBox="0 0 50 50" className="w-10 h-10 text-copper">
-              <path
-                fill="currentColor"
-                d="M25 5c-1.5 0-3 .5-4.2 1.5L10 15.5v24l10.8 9c2.4 2 6 2 8.4 0l10.8-9v-24l-10.8-9C28 5.5 26.5 5 25 5zm0 4c.7 0 1.4.2 2 .7l8 6.7v18.2l-8 6.7c-1.2 1-2.8 1-4 0l-8-6.7V16.4l8-6.7c.6-.5 1.3-.7 2-.7z"
-              />
-            </svg>
-            <div className="ml-2">
-              <span className="text-cream font-serif text-xl font-semibold tracking-wide">MAX</span>
-              <span className="text-cream/70 font-sans text-xs block -mt-1 tracking-[0.3em]">ESTATES</span>
-            </div>
-          </div>
+        <a href="#" className="flex items-center">
+          <img 
+            src="https://www.thegurgaon.homes/wp-content/uploads/2025/09/logo.jpg" 
+            alt="Max Estate 361 Logo" 
+            className="h-12 w-auto object-contain"
+          />
         </a>
 
         {/* Desktop Navigation */}

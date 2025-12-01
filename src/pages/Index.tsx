@@ -39,7 +39,7 @@ const Index = () => {
       <SideLeadForm />
 
       {/* Main Content - Adjusted for side form */}
-      <div className="lg:pr-[360px]">
+      <div className="lg:pr-[420px]">
         <HeroSection onEnquireClick={handleEnquireClick} />
         <OverviewSection />
         <AmenitiesSection />
