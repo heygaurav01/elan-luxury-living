@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Phone, MessageCircle, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import logo from '@/assets/logo.png';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -35,7 +36,7 @@ const Header = () => {
         {/* Logo */}
         <a href="#" className="flex items-center">
           <img 
-            src="https://www.thegurgaon.homes/wp-content/uploads/2025/09/logo.jpg" 
+            src={logo} 
             alt="Max Estate 361 Logo" 
             className="h-12 w-auto object-contain"
           />
