@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
@@ -15,11 +15,19 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        // Luxury real estate variants
+        luxury: "bg-copper text-primary-foreground hover:bg-copper-dark font-semibold tracking-wide shadow-lg hover:shadow-xl",
+        luxuryOutline: "border-2 border-copper text-copper hover:bg-copper hover:text-primary-foreground font-semibold tracking-wide",
+        hero: "bg-gradient-to-r from-copper to-gold text-charcoal font-bold tracking-wider shadow-lg hover:shadow-xl hover:scale-105",
+        dark: "bg-charcoal text-cream hover:bg-charcoal-light font-semibold tracking-wide",
+        whatsapp: "bg-[#25D366] text-white hover:bg-[#20BA5C] font-semibold shadow-md",
+        glass: "bg-card/20 backdrop-blur-md border border-card/30 text-card hover:bg-card/30 font-medium",
       },
       size: {
         default: "h-10 px-4 py-2",
         sm: "h-9 rounded-md px-3",
         lg: "h-11 rounded-md px-8",
+        xl: "h-14 rounded-lg px-10 text-base",
         icon: "h-10 w-10",
       },
     },
@@ -27,7 +35,7 @@ const buttonVariants = cva(
       variant: "default",
       size: "default",
     },
-  },
+  }
 );
 
 export interface ButtonProps
@@ -40,7 +48,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : "button";
     return <Comp className={cn(buttonVariants({ variant, size, className }))} ref={ref} {...props} />;
-  },
+  }
 );
 Button.displayName = "Button";
 
