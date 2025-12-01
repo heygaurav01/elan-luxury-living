@@ -9,7 +9,6 @@ import MasterPlanSection from '@/components/MasterPlanSection';
 import LocationSection from '@/components/LocationSection';
 import Footer from '@/components/Footer';
 import LeadForm from '@/components/LeadForm';
-import SideLeadForm from '@/components/SideLeadForm';
 import FloatingCTA from '@/components/FloatingCTA';
 
 const Index = () => {
@@ -34,12 +33,9 @@ const Index = () => {
       </h1>
 
       <Header />
-      
-      {/* Side Lead Form - Desktop Only */}
-      <SideLeadForm />
 
-      {/* Main Content - Adjusted for side form */}
-      <div className="lg:pr-[420px]">
+      {/* Main Content */}
+      <div>
         <HeroSection onEnquireClick={handleEnquireClick} />
         <OverviewSection />
         <AmenitiesSection />

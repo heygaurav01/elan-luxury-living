@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { ChevronDown } from 'lucide-react';
 import heroImage from '@/assets/hero-towers.png';
+import LeadForm from './LeadForm';
 
 interface HeroSectionProps {
   onEnquireClick: () => void;
@@ -21,83 +22,91 @@ const HeroSection = ({ onEnquireClick }: HeroSectionProps) => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 text-center text-cream">
-        <div className="max-w-4xl mx-auto">
-          {/* Location Badge */}
-          <div
-            className="inline-block mb-6 animate-fade-up"
-            style={{ animationDelay: '0.1s' }}
-          >
-            <span className="bg-copper/20 backdrop-blur-sm border border-copper/30 text-cream px-6 py-2 rounded-full text-sm font-sans font-medium tracking-wider">
-              Sector 36A, Gurgaon
-            </span>
-          </div>
-
-          {/* Main Title */}
-          <h1
-            className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold mb-4 animate-fade-up"
-            style={{ animationDelay: '0.2s' }}
-          >
-            MAX ESTATE <span className="text-copper">361</span>
-          </h1>
-
-          {/* Subtitle */}
-          <p
-            className="text-xl md:text-2xl font-sans font-light mb-4 animate-fade-up text-cream/90"
-            style={{ animationDelay: '0.3s' }}
-          >
-            3 BHK + Staff & 4 BHK + Staff Apartments
-          </p>
-
-          {/* Price */}
-          <div
-            className="mb-8 animate-fade-up"
-            style={{ animationDelay: '0.4s' }}
-          >
-            <span className="text-3xl md:text-4xl font-serif font-semibold">
-              Starting at{' '}
-              <span className="text-gradient bg-gradient-to-r from-copper to-gold bg-clip-text text-transparent">
-                ₹ 5.20 Cr*
+      <div className="relative z-10 container mx-auto px-4 text-center lg:text-left text-cream">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+          {/* Left Content */}
+          <div className="max-w-4xl lg:max-w-2xl">
+            {/* Location Badge */}
+            <div
+              className="inline-block mb-6 animate-fade-up"
+              style={{ animationDelay: '0.1s' }}
+            >
+              <span className="bg-copper/20 backdrop-blur-sm border border-copper/30 text-cream px-6 py-2 rounded-full text-sm font-sans font-medium tracking-wider">
+                Sector 36A, Gurgaon
               </span>
-            </span>
-          </div>
+            </div>
 
-          {/* Features */}
-          <div
-            className="flex flex-wrap justify-center gap-4 mb-10 animate-fade-up"
-            style={{ animationDelay: '0.5s' }}
-          >
-            {['18.5 Acres Estate', '6 Premium Towers', '100+ Amenities', 'IGBC Platinum'].map((feature) => (
-              <span
-                key={feature}
-                className="bg-cream/10 backdrop-blur-sm px-4 py-2 rounded-lg text-sm font-sans border border-cream/20"
+            {/* Main Title */}
+            <h1
+              className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold mb-4 animate-fade-up"
+              style={{ animationDelay: '0.2s' }}
+            >
+              MAX ESTATE <span className="text-copper">361</span>
+            </h1>
+
+            {/* Subtitle */}
+            <p
+              className="text-xl md:text-2xl font-sans font-light mb-4 animate-fade-up text-cream/90"
+              style={{ animationDelay: '0.3s' }}
+            >
+              3 BHK + Staff & 4 BHK + Staff Apartments
+            </p>
+
+            {/* Price */}
+            <div
+              className="mb-8 animate-fade-up"
+              style={{ animationDelay: '0.4s' }}
+            >
+              <span className="text-3xl md:text-4xl font-serif font-semibold">
+                Starting at{' '}
+                <span className="text-gradient bg-gradient-to-r from-copper to-gold bg-clip-text text-transparent">
+                  ₹ 5.20 Cr*
+                </span>
+              </span>
+            </div>
+
+            {/* Features */}
+            <div
+              className="flex flex-wrap justify-center lg:justify-start gap-4 mb-10 animate-fade-up"
+              style={{ animationDelay: '0.5s' }}
+            >
+              {['18.5 Acres Estate', '6 Premium Towers', '100+ Amenities', 'IGBC Platinum'].map((feature) => (
+                <span
+                  key={feature}
+                  className="bg-cream/10 backdrop-blur-sm px-4 py-2 rounded-lg text-sm font-sans border border-cream/20"
+                >
+                  {feature}
+                </span>
+              ))}
+            </div>
+
+            {/* CTA Buttons */}
+            <div
+              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-up"
+              style={{ animationDelay: '0.6s' }}
+            >
+              <Button
+                variant="hero"
+                size="xl"
+                onClick={onEnquireClick}
+                className="min-w-[200px]"
               >
-                {feature}
-              </span>
-            ))}
+                Enquire Now
+              </Button>
+              <Button
+                variant="glass"
+                size="xl"
+                className="min-w-[200px] text-cream border-cream/30"
+                onClick={onEnquireClick}
+              >
+                Download Brochure
+              </Button>
+            </div>
           </div>
 
-          {/* CTA Buttons */}
-          <div
-            className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up"
-            style={{ animationDelay: '0.6s' }}
-          >
-            <Button
-              variant="hero"
-              size="xl"
-              onClick={onEnquireClick}
-              className="min-w-[200px]"
-            >
-              Enquire Now
-            </Button>
-            <Button
-              variant="glass"
-              size="xl"
-              className="min-w-[200px] text-cream border-cream/30"
-              onClick={onEnquireClick}
-            >
-              Download Brochure
-            </Button>
+          {/* Right Form - Desktop Only */}
+          <div className="hidden lg:block w-full max-w-[450px] animate-fade-in">
+            <LeadForm />
           </div>
         </div>
       </div>

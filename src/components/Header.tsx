@@ -26,19 +26,18 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled
-          ? 'bg-charcoal/95 backdrop-blur-md shadow-elegant py-3'
-          : 'bg-transparent py-5'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
+        ? 'bg-charcoal/95 backdrop-blur-md shadow-elegant py-3'
+        : 'bg-transparent py-5'
+        }`}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="flex items-center">
-          <img 
-            src={logo} 
-            alt="Max Estate 361 Logo" 
-            className="h-12 w-auto object-contain"
+          <img
+            src={logo}
+            alt="Max Estate 361 Logo"
+            className="h-28 w-auto object-contain"
           />
         </a>
 

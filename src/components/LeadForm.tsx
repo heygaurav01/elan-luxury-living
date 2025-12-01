@@ -3,6 +3,8 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { toast } from '@/hooks/use-toast';
 import { X } from 'lucide-react';
+import { submitFormData } from '@/lib/api';
+import { trackContactForm } from '@/lib/analytics';
 
 interface LeadFormProps {
   isPopup?: boolean;
@@ -54,20 +56,38 @@ const LeadForm = ({ isPopup = false, onClose, title = "Register for Exclusive Of
 
     setIsSubmitting(true);
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-
-    toast({
-      title: "Thank you for your interest!",
-      description: "Our team will contact you shortly.",
+    const result = await submitFormData({
+      name: formData.name,
+      phone: formData.phone,
+      email: formData.email,
+      countryCode: '+91', // Default country code
+      message: title, // Using title as message/context
     });
 
-    setFormData({ name: '', phone: '', email: '' });
-    setIsSubmitting(false);
+    if (result.success) {
+      trackContactForm('inquiry');
 
-    if (isPopup && onClose) {
-      onClose();
+      toast({
+        title: "Success!",
+        description: result.message,
+      });
+
+      // Redirect to thank you page
+      window.location.href = '/Thank-you.html';
+
+      setFormData({ name: '', phone: '', email: '' });
+      if (isPopup && onClose) {
+        onClose();
+      }
+    } else {
+      toast({
+        title: "Error",
+        description: result.message,
+        variant: "destructive",
+      });
     }
+
+    setIsSubmitting(false);
   };
 
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
