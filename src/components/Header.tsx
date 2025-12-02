@@ -57,7 +57,7 @@ const Header = () => {
         {/* Contact Buttons */}
         <div className="hidden md:flex items-center gap-3">
           <a href="tel:+918200801802">
-            <Button variant="luxuryOutline" size="sm" className="text-cream border-cream/50 hover:border-copper hover:text-copper">
+            <Button variant="luxuryOutline" size="sm" className="text-cream border-cream/50 hover:border-copper hover:text-charcoal">
               <Phone className="w-4 h-4" />
               +91 8200 801 802
             </Button>

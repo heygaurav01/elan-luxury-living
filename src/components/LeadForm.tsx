@@ -12,7 +12,7 @@ interface LeadFormProps {
   title?: string;
 }
 
-const LeadForm = ({ isPopup = false, onClose, title = "Register for Exclusive Offers" }: LeadFormProps) => {
+const LeadForm = ({ isPopup = false, onClose, title = " " }: LeadFormProps) => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -107,7 +107,7 @@ const LeadForm = ({ isPopup = false, onClose, title = "Register for Exclusive Of
             setFormData({ ...formData, name: e.target.value });
             if (errors.name) setErrors({ ...errors, name: '' });
           }}
-          className={`h-12 bg-cream border-border/50 focus:border-copper ${errors.name ? 'border-destructive' : ''}`}
+          className={`h-12 bg-cream border-border/50 focus:border-copper text-black ${errors.name ? 'border-destructive' : ''}`}
         />
         {errors.name && <p className="text-destructive text-xs mt-1">{errors.name}</p>}
       </div>
@@ -123,7 +123,7 @@ const LeadForm = ({ isPopup = false, onClose, title = "Register for Exclusive Of
             placeholder="Mobile No *"
             value={formData.phone}
             onChange={handlePhoneChange}
-            className={`h-12 bg-cream border-border/50 focus:border-copper ${errors.phone ? 'border-destructive' : ''}`}
+            className={`h-12 bg-cream border-border/50 focus:border-copper text-black ${errors.phone ? 'border-destructive' : ''}`}
           />
         </div>
       </div>
@@ -138,7 +138,7 @@ const LeadForm = ({ isPopup = false, onClose, title = "Register for Exclusive Of
             setFormData({ ...formData, email: e.target.value });
             if (errors.email) setErrors({ ...errors, email: '' });
           }}
-          className={`h-12 bg-cream border-border/50 focus:border-copper ${errors.email ? 'border-destructive' : ''}`}
+          className={`h-12 bg-cream border-border/50 focus:border-copper text-black ${errors.email ? 'border-destructive' : ''}`}
         />
         {errors.email && <p className="text-destructive text-xs mt-1">{errors.email}</p>}
       </div>
