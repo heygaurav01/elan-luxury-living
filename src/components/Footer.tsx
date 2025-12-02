@@ -20,7 +20,7 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-cream/70 font-sans leading-relaxed max-w-md">
-              Max Estate 361 - Premium 3 & 4 BHK luxury residences in Sector 36A, Gurugram. 
+              Max Estate 361 - Premium 3 & 4 BHK luxury residences in Sector 36A, Gurugram.
               Experience world-class living with 100+ amenities in an 18.5-acre intergenerational community.
             </p>
           </div>
@@ -73,7 +73,7 @@ const Footer = () => {
         <div className="border-t border-copper/20 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-cream/50 font-sans text-sm text-center md:text-left">
-              AUTHORIZED CHANNEL PARTNER RERA NUMBER: HARERA-PKL-REA-2735-2024
+              PROJECT RERA NUMBER: HRC/REP/HARERA/GGM/1012/744/2025/115 https://haryanarera.gov.in/
             </p>
             <p className="text-cream/50 font-sans text-sm">
               © {new Date().getFullYear()} Max Estates. All Rights Reserved.
@@ -82,10 +82,15 @@ const Footer = () => {
 
           {/* Disclaimer */}
           <p className="text-cream/40 font-sans text-xs mt-6 leading-relaxed">
-            Disclaimer: The content is for information purposes only and does not constitute an offer to avail of any service. 
-            Prices mentioned are subject to change without notice and properties mentioned are subject to availability. 
+            Disclaimer: The content is for information purposes only and does not constitute an offer to avail of any service.
+            Prices mentioned are subject to change without notice and properties mentioned are subject to availability.
             Images for representation purposes only. This is the official website of authorized marketing partner.
           </p>
+          <div className="text-center mt-4">
+            <a href="/Disclaimer.html" className="text-cream/50 hover:text-copper font-sans text-xs transition-colors underline underline-offset-2">
+              Disclaimer & Privacy Policy
+            </a>
+          </div>
         </div>
       </div>
     </footer>
